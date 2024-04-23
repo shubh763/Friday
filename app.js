@@ -69,6 +69,7 @@ window.onload = () => {
   fridayComs.forEach((e) => {
     document.querySelector(".commands").innerHTML += `<p>#${e}</p><br />`;
   });
+  
   // battery
   let batteryPromise = navigator.getBattery();
   batteryPromise.then(batteryCallback);
@@ -301,6 +302,7 @@ recognition.onresult = function (event) {
     }
   
     // some casual commands
+    
     if (transcript.includes("what's the current charge")) {
       readOut(`the current charge is ${charge}`);
     }
@@ -370,6 +372,22 @@ recognition.onresult = function (event) {
       windowsB.push(a)
     }
     // availability check
+    if (transcript.includes("hello friday")) {
+      readOut("hello Mr Shubh");
+    }
+
+    if (transcript.includes("how are you")) {
+      readOut("i am fine what about you?");
+    }
+
+    if (transcript.includes("i am also fine")) {
+      readOut("let's go ahead and start");
+    }
+
+    if (transcript.includes("what's your age")) {
+      readOut("i don't know but i know that mister shubh created me.");
+    }
+
     if (transcript.includes("are you there")) {
       readOut("yes sir");
     }
@@ -483,6 +501,7 @@ recognition.onresult = function (event) {
         readOut("sir i didn't found your instagram information");
       }
     }
+    
     // twitter
     if (transcript.includes("open my twitter profile")) {
       readOut("opening your twitter profile");
@@ -646,7 +665,7 @@ document.querySelector(".calendar").addEventListener("click", () => {
 // news setup
 
 async function getNews(){
-  var url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=b0712dc2e5814a1bb531e6f096b3d7d3"
+  var url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=8a6a7bdf675446d59d17519bdaa678cc"
   var req = new Request(url)
   await fetch(req).then((response) => response.json())
   .then((data) => {
@@ -679,7 +698,7 @@ async function getCategoryNews(category){
     `q=${category}&` +
     `from=${yyyy}-${mm}-${dd}&` +
     "sortBy=popularity&" +
-    "apiKey=b0712dc2e5814a1bb531e6f096b3d7d3";
+    "apiKey=8a6a7bdf675446d59d17519bdaa678cc";
 
     // https://newsapi.org/v2/everything?q=Apple&from=2021-09-19&sortBy=popularity&apiKey=API_KEY
 

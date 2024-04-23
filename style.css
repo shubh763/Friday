@@ -259,6 +259,38 @@ input {
   font-size: 50px;
 }
 
+.calendar {
+  position: absolute;
+  top: 80px;
+  right: 350px;
+  background-color: #ffffff; /* Change as needed */
+  z-index: 100000000;
+  background: #8e2de2;
+  background: -webkit-linear-gradient(to right, #4a00e0, #8e2de2);
+  background: linear-gradient(to right, #4a00e0, #8e2de2);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  cursor: pointer;
+}
+
+.calendar *{
+  position: static;
+  width: 180px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.calendar #month{
+  background-color: black; /* Unicode for calendar icon */
+  padding: 10px 20px;
+}
+
+.calendar #date{
+  font-size: 50px;
+}
+
+
 .new_jarvis_window {
   display: none;
 }
