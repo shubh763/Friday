@@ -373,7 +373,7 @@ recognition.onresult = function (event) {
     }
     // availability check
     if (transcript.includes("hello friday")) {
-      readOut("hello Mr Shubh");
+      readOut("hello Sir");
     }
 
     if (transcript.includes("how are you")) {
